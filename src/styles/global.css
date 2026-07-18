@@ -1,0 +1,100 @@
+:root {
+  --badger-red: #c5050c;
+  --badger-red-dark: #9b0000;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --paper: #ffffff;
+  --paper-soft: #f7f5f3;
+  --border: #e5e0dc;
+  --max-width: 72rem;
+  --radius: 0.5rem;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--badger-red);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius);
+  background: var(--badger-red);
+  color: var(--paper);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--badger-red);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--badger-red-dark);
+  border-color: var(--badger-red-dark);
+}
+
+.btn.btn-outline {
+  background: transparent;
+  color: var(--badger-red);
+}
+
+.btn.btn-outline:hover {
+  background: var(--badger-red);
+  color: var(--paper);
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.section {
+  padding-block: 3.5rem;
+}
+
+.section-soft {
+  background: var(--paper-soft);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--badger-red);
+}

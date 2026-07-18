@@ -1,0 +1,52 @@
+---
+import { site } from "../data/site.js";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>&copy; {year} {site.name}. Registered student organization at UW–Madison.</p>
+    <ul class="footer-links">
+      <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+      <li><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--paper-soft);
+    margin-top: 4rem;
+  }
+
+  .footer-inner {
+    padding-block: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: var(--badger-red);
+  }
+</style>
