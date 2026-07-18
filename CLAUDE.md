@@ -23,10 +23,11 @@ No backend, no database — content lives in `src/data/*.js` as plain JS objects
 
 ## Conventions
 
-- The site deploys to GitHub Pages as a **project page** (`base: "/uw-madison-statclub"` in
-  `astro.config.mjs`), not a root domain. Always build internal links with
-  `import.meta.env.BASE_URL` rather than hardcoded absolute paths like `/about/` — otherwise
-  links break in production even though they work in `npm run dev`.
+- The site deploys to GitHub Pages as an **org/user page** at the root domain
+  (`uw-madison-statclub.github.io`, no `base` path in `astro.config.mjs`), since the repo is
+  named `uw-madison-statclub.github.io`. Still build internal links with
+  `import.meta.env.BASE_URL` rather than hardcoded absolute paths like `/about/` — it's `"/"`
+  here, but keeps the code portable if the deploy target ever changes.
 - Content edits (new officers, events, resource links) should go in `src/data/`, not inline
   in page files.
 - No client-side framework (React/Vue) is installed — keep interactivity to small inline
