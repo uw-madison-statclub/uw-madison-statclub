@@ -10,16 +10,19 @@ const nextEvents = upcomingEvents.slice(0, 3);
 <Layout title="Home">
   <section class="hero">
     <div class="wrap hero-inner">
-      <p class="eyebrow">UW–Madison Registered Student Organization</p>
-      <h1>{site.name}</h1>
-      <p class="hero-tagline">
-        A community for students who love data — workshops, talks, case competitions, and a
-        network of peers heading into statistics and data science careers.
-      </p>
-      <div class="hero-actions">
-        <a class="btn" href={`${base}contact/`}>Join the Club</a>
-        <a class="btn btn-outline" href={`${base}events/`}>See Upcoming Events</a>
+      <div class="hero-text">
+        <p class="eyebrow">UW–Madison Registered Student Organization</p>
+        <h1>{site.name}</h1>
+        <p class="hero-tagline">
+          A community for students who love data — workshops, talks, case competitions, and a
+          network of peers heading into statistics and data science careers.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href={`${base}contact/`}>Join the Club</a>
+          <a class="btn btn-outline" href={`${base}events/`}>See Upcoming Events</a>
+        </div>
       </div>
+      <img class="hero-graphic" src={`${base}wisconsin_stat.png`} alt="Wisconsin Statistics logo" />
     </div>
   </section>
 
@@ -28,14 +31,17 @@ const nextEvents = upcomingEvents.slice(0, 3);
       <h2>What We Do</h2>
       <div class="grid-3">
         <div class="card">
+          <div class="img-placeholder card-graphic">Icon or photo</div>
           <h3>Workshops</h3>
           <p>Hands-on sessions on R, Python, SQL, and the tools you'll actually use on the job.</p>
         </div>
         <div class="card">
+          <div class="img-placeholder card-graphic">Icon or photo</div>
           <h3>Speaker Events</h3>
           <p>Talks and panels with faculty, alumni, and industry professionals in stats and data science.</p>
         </div>
         <div class="card">
+          <div class="img-placeholder card-graphic">Icon or photo</div>
           <h3>Community</h3>
           <p>Socials, study groups, and a network of students to navigate coursework and internships with.</p>
         </div>
@@ -80,7 +86,17 @@ const nextEvents = upcomingEvents.slice(0, 3);
 
   .hero-inner {
     padding-block: 4.5rem;
-    max-width: 42rem;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .hero-graphic {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
   }
 
   .hero h1 {
@@ -125,9 +141,23 @@ const nextEvents = upcomingEvents.slice(0, 3);
     max-width: 36rem;
   }
 
+  .card-graphic {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 1rem;
+  }
+
   @media (max-width: 820px) {
     .grid-3 {
       grid-template-columns: 1fr;
+    }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-graphic {
+      order: -1;
+      aspect-ratio: 16 / 9;
     }
   }
 </style>

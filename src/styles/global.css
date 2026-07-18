@@ -98,3 +98,16 @@ h3 {
   font-weight: 700;
   color: var(--badger-red);
 }
+
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--paper-soft);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  padding: 1rem;
+}
