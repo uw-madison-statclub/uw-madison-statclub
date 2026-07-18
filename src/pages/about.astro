@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { officers } from "../data/officers.js";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="About" description="Our mission and the officer team behind the UW–Madison Statistics Club.">
@@ -28,6 +30,7 @@ import { officers } from "../data/officers.js";
         {
           officers.map((officer) => (
             <div class="card officer-card">
+              <img class="officer-photo" src={`${base}${officer.photo}`} alt={officer.name} />
               <h3>{officer.name}</h3>
               <p class="role">{officer.role}</p>
               <p>{officer.bio}</p>
@@ -55,6 +58,14 @@ import { officers } from "../data/officers.js";
     color: var(--badger-red);
     font-weight: 600;
     margin-top: -0.5rem;
+  }
+
+  .officer-photo {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
   }
 
   @media (max-width: 640px) {
