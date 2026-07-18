@@ -5,7 +5,7 @@ Source for the [UW–Madison Statistics Club](https://stat.wisc.edu/) website, b
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/) 18.20.8+ (or 20.3+ / 22+)
+- [Node.js](https://nodejs.org/) 22.12+
 
 ## Local development
 
