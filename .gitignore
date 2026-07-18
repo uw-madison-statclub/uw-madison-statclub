@@ -14,5 +14,8 @@ node_modules/
 # macOS
 .DS_Store
 
+# editor swap files
+*.swp
+
 # logs
 npm-debug.log*
