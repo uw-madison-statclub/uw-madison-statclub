@@ -2,10 +2,10 @@ export const site = {
   name: "UW–Madison Statistics Club",
   shortName: "Stat Club",
   tagline: "Data, statistics, and community at UW–Madison.",
-  email: "statclub@studentorg.wisc.edu",
-  instagram: "https://www.instagram.com/uwstatclub",
-  linkedin: "https://www.linkedin.com/company/uw-madison-statistics-club",
-  discord: "https://discord.gg/replace-with-invite",
+  email: "uwstatclub@gmail.com",
+  instagram: "https://www.instagram.com/statsclubuwmadison/",
+  linkedin: "https://www.linkedin.com/company/undergraduate-statistics-club-uw-madison/",
+  discord: "https://discord.gg/7uJsEbEFWY",
   wisconsinOrgsUrl: "https://win.wisc.edu/",
 };
 
