@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { officers } from "../data/officers.js";
+---
+
+<Layout title="About" description="Our mission and the officer team behind the UW–Madison Statistics Club.">
+  <section class="section">
+    <div class="wrap narrow">
+      <p class="eyebrow">About Us</p>
+      <h1>Our Mission</h1>
+      <p>
+        The UW–Madison Statistics Club connects students who are curious about statistics,
+        data science, and the analytical tools shaping research and industry. We host
+        workshops, invite speakers from academia and industry, and build a community for
+        students at every experience level — no stats background required to join.
+      </p>
+      <p>
+        Whether you're majoring in statistics, data science, or just curious about the field,
+        our meetings and events are open to all UW–Madison students.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap">
+      <h2>Officers</h2>
+      <div class="grid-officers">
+        {
+          officers.map((officer) => (
+            <div class="card officer-card">
+              <h3>{officer.name}</h3>
+              <p class="role">{officer.role}</p>
+              <p>{officer.bio}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .narrow {
+    max-width: 42rem;
+  }
+
+  .grid-officers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .officer-card .role {
+    color: var(--badger-red);
+    font-weight: 600;
+    margin-top: -0.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .grid-officers {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

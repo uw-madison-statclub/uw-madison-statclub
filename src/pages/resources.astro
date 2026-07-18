@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { resourceGroups } from "../data/resources.js";
+---
+
+<Layout title="Resources" description="Department links, learning resources, and past workshop materials.">
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Resources</p>
+      <h1>Resources</h1>
+      <p class="intro">
+        Links to the department, learning materials, and past workshop content — a starting
+        point whether you're new to statistics or looking for your next project.
+      </p>
+
+      {
+        resourceGroups.map((group) => (
+          <div class="resource-group">
+            <h2>{group.heading}</h2>
+            <div class="grid-links">
+              {group.links.map((link) => (
+                <a class="card link-card" href={link.href} target="_blank" rel="noopener noreferrer">
+                  <h3>{link.label}</h3>
+                  <p>{link.description}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .intro {
+    max-width: 42rem;
+    color: var(--ink-soft);
+  }
+
+  .resource-group {
+    margin-top: 2.5rem;
+  }
+
+  .grid-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .link-card {
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease;
+  }
+
+  .link-card:hover {
+    border-color: var(--badger-red);
+  }
+
+  .link-card h3 {
+    color: var(--ink);
+  }
+
+  .link-card p {
+    color: var(--ink-soft);
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 820px) {
+    .grid-links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

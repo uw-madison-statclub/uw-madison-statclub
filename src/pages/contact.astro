@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site } from "../data/site.js";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Join / Contact" description="How to join the UW–Madison Statistics Club and get in touch.">
+  <section class="section">
+    <div class="wrap narrow">
+      <p class="eyebrow">Join / Contact</p>
+      <h1>Join the Club</h1>
+      <p>
+        Membership is free and open to all UW–Madison students — no statistics background
+        required. Here's how to get involved:
+      </p>
+      <ol class="steps">
+        <li>Come to a general meeting (see the <a href={`${base}events/`}>Events</a> page for dates).</li>
+        <li>Join our Discord to get announcements and connect with other members.</li>
+        <li>Follow us on Instagram for event reminders and photos.</li>
+      </ol>
+
+      <div class="join-actions">
+        <a class="btn" href={site.discord} target="_blank" rel="noopener noreferrer">Join Discord</a>
+        <a class="btn btn-outline" href={site.instagram} target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap narrow">
+      <h2>Contact Us</h2>
+      <p>
+        Questions about the club, partnership ideas, or want a group to speak at a meeting?
+        Reach out — we'd love to hear from you.
+      </p>
+      <p class="email-line">
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .narrow {
+    max-width: 42rem;
+  }
+
+  .steps {
+    padding-left: 1.25rem;
+  }
+
+  .steps li {
+    margin-bottom: 0.5rem;
+  }
+
+  .join-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .email-line {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+</style>

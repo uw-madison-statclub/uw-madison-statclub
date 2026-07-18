@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site } from "../data/site.js";
+import { upcomingEvents } from "../data/events.js";
+
+const base = import.meta.env.BASE_URL;
+const nextEvents = upcomingEvents.slice(0, 3);
+---
+
+<Layout title="Home">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">UW–Madison Registered Student Organization</p>
+      <h1>{site.name}</h1>
+      <p class="hero-tagline">
+        A community for students who love data — workshops, talks, case competitions, and a
+        network of peers heading into statistics and data science careers.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href={`${base}contact/`}>Join the Club</a>
+        <a class="btn btn-outline" href={`${base}events/`}>See Upcoming Events</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>What We Do</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Workshops</h3>
+          <p>Hands-on sessions on R, Python, SQL, and the tools you'll actually use on the job.</p>
+        </div>
+        <div class="card">
+          <h3>Speaker Events</h3>
+          <p>Talks and panels with faculty, alumni, and industry professionals in stats and data science.</p>
+        </div>
+        <div class="card">
+          <h3>Community</h3>
+          <p>Socials, study groups, and a network of students to navigate coursework and internships with.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap">
+      <div class="section-header">
+        <h2>Coming Up</h2>
+        <a href={`${base}events/`}>View all events &rarr;</a>
+      </div>
+      <div class="grid-3">
+        {
+          nextEvents.map((event) => (
+            <div class="card">
+              <p class="eyebrow">{event.date}</p>
+              <h3>{event.title}</h3>
+              <p>{event.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="wrap cta-inner">
+      <h2>New to the club?</h2>
+      <p>No experience required — just an interest in data. Meetings are open to all majors.</p>
+      <a class="btn" href={`${base}contact/`}>How to Join</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background: var(--paper-soft);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-inner {
+    padding-block: 4.5rem;
+    max-width: 42rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .hero-tagline {
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .section-header a {
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .cta-inner {
+    text-align: center;
+    max-width: 36rem;
+  }
+
+  @media (max-width: 820px) {
+    .grid-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
