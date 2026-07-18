@@ -31,17 +31,17 @@ const nextEvents = upcomingEvents.slice(0, 3);
       <h2>What We Do</h2>
       <div class="grid-3">
         <div class="card">
-          <div class="img-placeholder card-graphic">Icon or photo</div>
-          <h3>Workshops</h3>
-          <p>Hands-on sessions on R, Python, SQL, and the tools you'll actually use on the job.</p>
+          <img class="card-graphic" src={`${base}audience.jpeg`} alt="Data challenge event" />
+          <h3>Data Challenge</h3>
+          <p>A hands-on competition where teams tackle a real dataset and present their findings.</p>
         </div>
         <div class="card">
-          <div class="img-placeholder card-graphic">Icon or photo</div>
+          <img class="card-graphic" src={`${base}guest_speaker.jpeg`} alt="Guest speaker event" />
           <h3>Speaker Events</h3>
           <p>Talks and panels with faculty, alumni, and industry professionals in stats and data science.</p>
         </div>
         <div class="card">
-          <div class="img-placeholder card-graphic">Icon or photo</div>
+          <img class="card-graphic" src={`${base}poker.jpeg`} alt="Club poker night" />
           <h3>Community</h3>
           <p>Socials, study groups, and a network of students to navigate coursework and internships with.</p>
         </div>
@@ -143,6 +143,9 @@ const nextEvents = upcomingEvents.slice(0, 3);
 
   .card-graphic {
     aspect-ratio: 16 / 9;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
     margin-bottom: 1rem;
   }
 
